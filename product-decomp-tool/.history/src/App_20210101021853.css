@@ -1,0 +1,18 @@
+body {
+  background-color:#190061;
+}
+
+#app {
+  text-align: center;
+}
+
+#tool-container {
+ height: 80vh;
+ width: 80vw;
+ background-color: green;
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}

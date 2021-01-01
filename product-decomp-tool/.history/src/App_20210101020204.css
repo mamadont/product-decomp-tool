@@ -1,0 +1,14 @@
+body {
+  background-color:#190061;
+}
+
+#app {
+  text-align: center;
+  
+}
+
+#tool-container {
+  width: 60px;
+  height: 70px;
+  border-radius: green;
+}

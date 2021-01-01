@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './components/card';
+// import Card from './components/card';
 import Column from './components/column';
 
 function App() {
@@ -7,10 +7,7 @@ function App() {
     <div id="app">
       <h1> Problem Decomposition Tool </h1>
       <div id="tool-container"> 
-        <Column>
-         
-        </Column>
-        <Card></Card>
+        <Column></Column>
       </div>
     </div>
   );

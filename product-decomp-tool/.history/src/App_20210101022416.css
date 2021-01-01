@@ -1,17 +1,16 @@
 body {
-  background: rgb(115,207,202);
-  background: linear-gradient(90deg, rgba(115,207,202,1) 28%, rgba(255,255,255,1) 100%);
+  background-color:#190061;
 }
 
 #app {
   text-align: center;
-  color: #3AAFA9; 
+  color:white; 
 }
 
 #tool-container {
  height: 80vh;
  width: 80vw;
- background-color: #2B7A78;
+ background-color: #282828;
  position: fixed;
  top: 50%;
  left: 50%;
