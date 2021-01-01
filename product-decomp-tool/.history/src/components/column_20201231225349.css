@@ -1,0 +1,10 @@
+#column { 
+    background-color: blue;
+    height: 600px;
+    width: 250px;
+}
+
+#column-header {
+    background-color: black;
+    width: 100%;
+}
