@@ -1,0 +1,14 @@
+#card-body {
+    background-color: black;
+    color: white;
+    height: 125px;
+    width: 200px; 
+    margin-left: 100px; 
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#card-body:hover { 
+    transform: translateY(-8px);
+    transition-duration: .5s;
+}

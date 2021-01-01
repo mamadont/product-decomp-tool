@@ -1,0 +1,8 @@
+#card-body{
+    background-color: black;
+    color: white;
+    height: 125px;
+    width: 200px; 
+    margin-left: 100px; 
+    border-radius: 25px;
+}
