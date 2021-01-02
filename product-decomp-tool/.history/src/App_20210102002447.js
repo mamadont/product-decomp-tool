@@ -8,13 +8,18 @@ function App() {
     <div id="app">
       <h1> Problem Decomposition Tool </h1>
         <div id="tool-container"> 
-            <Grid container direction="row" justify="center" alignItems="center" spacing="10" >
-              <Grid item xs={4}>
-                <Column></Column>
-              </Grid>
-              <Grid item item xs={4}>
-                <Column></Column>
-              </Grid>
+        <Grid 
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        spacing="10" >
+            <Grid item xs={6}>
+              <Column></Column>
+            </Grid>
+            <Grid item item xs={6}>
+              <Column></Column>
+            </Grid>
             </Grid>
         </div>
     </div>

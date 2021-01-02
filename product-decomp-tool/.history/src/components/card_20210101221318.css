@@ -1,8 +1,10 @@
 #card-body {
     background-color: #DEF2F1;
-    color: #2B7A78;
+    color: white;
     height: 125px;
     width: 200px; 
+    margin-left: 100px; 
+    margin-bottom: 10px;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
