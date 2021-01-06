@@ -1,6 +1,5 @@
 import './App.css';
 import Column from './components/column';
-import ColumnTwo from './components/columnTwo';
 import Grid from '@material-ui/core/Grid';
 
 

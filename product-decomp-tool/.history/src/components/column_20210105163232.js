@@ -7,9 +7,12 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 class Column extends React.Component {
     render(){
         return(
-            <div id="column"> 
-                 <Card/> 
-             </div>  
+            <div>
+                <div id="column"> 
+                    <Card/>
+            </div>
+            </div>
+            
         );
     }
 }

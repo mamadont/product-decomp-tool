@@ -1,7 +1,7 @@
 import './App.css';
 import Column from './components/column';
-import ColumnTwo from './components/columnTwo';
 import Grid from '@material-ui/core/Grid';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
                 <Column></Column>
               </Grid>
               <Grid item item xs={4}>
-                <ColumnTwo></ColumnTwo>
+                <Column></Column>
               </Grid>
             </Grid>
         </div>
