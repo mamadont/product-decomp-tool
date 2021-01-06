@@ -9,16 +9,16 @@ class Column extends React.Component {
         return(
             <Droppable droppableId="droppable-1">
                 {provided => (
-                    <div 
-                        ref = {provided.innerRef}
-                        {...provided.droppableProps}
-                        id="column"
-                    > 
-                        <Card/> 
-                        <Card/> 
-                        <Card/>
-                        {provided.placeholder}
-                    </div>
+                <div 
+                    innerRef={provided.innerRef}
+                    {...provided.droppableProps}
+                    id="column"
+                > 
+                    <Card/> 
+                    <Card/> 
+                    <Card/>
+                    {provided.placeholder}
+                </div>
                 )}
             </Droppable>
         );

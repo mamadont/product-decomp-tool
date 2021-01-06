@@ -1,26 +1,31 @@
 import React from 'react';
 import './column.css';
 import Card from './card.js';
-import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 class Column extends React.Component {
     render(){
+        this.onDragEnd = result => {
+
+        }
         return(
-            <Droppable droppableId="droppable-1">
-                {provided => (
+            <DragDropContext>
+                <Droppable droppableId={1}>
+                    {(provided) => (
                     <div 
-                        ref = {provided.innerRef}
+                        innerRef={provided.innerRef}
                         {...provided.droppableProps}
                         id="column"
                     > 
                         <Card/> 
                         <Card/> 
                         <Card/>
-                        {provided.placeholder}
                     </div>
-                )}
-            </Droppable>
+                    )}
+                    
+                </Droppable>
+             </DragDropContext>  
         );
     }
 }

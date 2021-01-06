@@ -9,7 +9,7 @@ class Card extends React.Component {
 
     render() {
         return (
-            <Draggable draggableId="draggable-card" index={}>
+            <Draggable draggableId="draggable-card" index={this.tasks.id}>
                 {provided => (
                    <div 
                     {...provided.draggableProps}

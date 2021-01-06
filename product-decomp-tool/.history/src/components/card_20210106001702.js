@@ -9,7 +9,7 @@ class Card extends React.Component {
 
     render() {
         return (
-            <Draggable draggableId="draggable-card" index={}>
+            <Draggable draggableId="draggable-card" index={0}>
                 {provided => (
                    <div 
                     {...provided.draggableProps}
@@ -17,7 +17,6 @@ class Card extends React.Component {
                     ref={provided.innerRef}
                     id="card-body"
                    >
-
                    </div> 
                 )}
                 

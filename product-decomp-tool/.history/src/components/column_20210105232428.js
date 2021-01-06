@@ -1,16 +1,22 @@
 import React from 'react';
 import './column.css';
 import Card from './card.js';
-import { Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable} from 'react-beautiful-dnd';
 
 
 class Column extends React.Component {
     render(){
+        this.onDragEnd = result => {
+
+        }
         return(
-            <Droppable droppableId="droppable-1">
-                {provided => (
+            <DragDropContext 
+            onDragEnd={this.onDragEnd}
+            >
+                <Droppable droppableId="droppable-1">
+                    {(provided) => (
                     <div 
-                        ref = {provided.innerRef}
+                        innerRef={provided.innerRef}
                         {...provided.droppableProps}
                         id="column"
                     > 
@@ -19,8 +25,10 @@ class Column extends React.Component {
                         <Card/>
                         {provided.placeholder}
                     </div>
-                )}
-            </Droppable>
+                    )}
+                    
+                </Droppable>
+             </DragDropContext>  
         );
     }
 }

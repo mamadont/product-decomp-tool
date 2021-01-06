@@ -10,7 +10,7 @@ class Column extends React.Component {
             <Droppable droppableId="droppable-1">
                 {provided => (
                     <div 
-                        ref = {provided.innerRef}
+                        innerRef={provided.innerRef}
                         {...provided.droppableProps}
                         id="column"
                     > 
