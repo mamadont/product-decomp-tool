@@ -1,19 +1,14 @@
 import React from 'react';
 import './card.css'; 
 import { Draggable } from 'react-beautiful-dnd';
+import data from '../data/data-store.js';
 
 
 class Card extends React.Component {
-    
+    const tasks = data; 
 
     render() {
-        const data = [
-            {id: '0', task: 'Step 1'},
-            {id: '1', task: 'Step 2'},
-            {id: '2', task: 'Step 3'}
-        ];
-        return(
-            
+        return (
             <Draggable draggableId="draggable-card" index={0}>
                 {provided => (
                    <div 
@@ -22,7 +17,7 @@ class Card extends React.Component {
                     ref={provided.innerRef}
                     id="card-body"
                    >
-                       <p> {this.props.step} </p>
+
                    </div> 
                 )}
                 

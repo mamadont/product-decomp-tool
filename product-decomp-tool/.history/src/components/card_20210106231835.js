@@ -13,7 +13,6 @@ class Card extends React.Component {
             {id: '2', task: 'Step 3'}
         ];
         return(
-            
             <Draggable draggableId="draggable-card" index={0}>
                 {provided => (
                    <div 

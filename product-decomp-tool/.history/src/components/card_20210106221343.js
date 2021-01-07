@@ -7,13 +7,7 @@ class Card extends React.Component {
     
 
     render() {
-        const data = [
-            {id: '0', task: 'Step 1'},
-            {id: '1', task: 'Step 2'},
-            {id: '2', task: 'Step 3'}
-        ];
         return(
-            
             <Draggable draggableId="draggable-card" index={0}>
                 {provided => (
                    <div 

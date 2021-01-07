@@ -20,13 +20,7 @@ class Column extends React.Component {
                         {...provided.droppableProps}
                         id="column"
                     > 
-                       { data.map(({id, task}) => {
-                            return(
-                                <Card step={task}/>
-                            );
-                        })
-
-                        }
+                       
                         {provided.placeholder}
                     </div>
                 )}

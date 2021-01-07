@@ -6,12 +6,6 @@ import { Droppable } from 'react-beautiful-dnd';
 
 class Column extends React.Component {
     render(){
-        const data = [
-            {id: '0', task: 'Step 1'},
-            {id: '1', task: 'Step 2'},
-            {id: '2', task: 'Step 3'}
-        ];
-        
         return(
             <Droppable droppableId="droppable-1">
                 {provided => (
@@ -20,13 +14,7 @@ class Column extends React.Component {
                         {...provided.droppableProps}
                         id="column"
                     > 
-                       { data.map(({id, task}) => {
-                            return(
-                                <Card step={task}/>
-                            );
-                        })
-
-                        }
+                        <Card/> 
                         {provided.placeholder}
                     </div>
                 )}

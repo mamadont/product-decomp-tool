@@ -13,7 +13,7 @@ class Column extends React.Component {
         ];
         
         return(
-            <Droppable droppableId="droppable-1">
+            <Droppable droppableId={this.data.id}>
                 {provided => (
                     <div 
                         ref = {provided.innerRef}
