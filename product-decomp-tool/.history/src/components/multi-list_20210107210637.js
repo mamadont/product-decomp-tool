@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import './multi-list.css';
+import Data from '../data/data-store';
 
-const getItems = (count, offset = 0) =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k + offset}`,
-        content: `item ${k + offset}`
-    }));
+const tasks = Data;
+// const getItems = (count, offset = 0) =>
+//     Array.from({ length: count }, (v, k) => k).map(k => ({
+//         id: `item-${k + offset}`,
+//         content: `item ${k + offset}`
+//     }));
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
@@ -50,8 +53,8 @@ const getListStyle = isDraggingOver => ({
 
 class MultipleDragList extends Component {
     state = {
-        items: getItems(10),
-        selected: getItems(5, 10)
+        items: tasks,
+        selected: [] // getItems(5,10)
     };
 
     // Defining unique ID for multiple lists
@@ -103,18 +106,19 @@ class MultipleDragList extends Component {
 
     render() {
         return (
-            <div style={{ 'display': 'flex' }}>
+            <div id="container">
                 <DragDropContext onDragEnd={this.onDragEnd}>
                     <Droppable droppableId="droppable">
                         {(provided, snapshot) => (
                             <div
                                 ref={provided.innerRef}
+                                class="column"
                                 style={getListStyle(snapshot.isDraggingOver)}>
-                                {this.state.items.map((item, index) => (
+                                {this.state.items.map((id, task) => (
                                     <Draggable
-                                        key={item.id}
-                                        draggableId={item.id}
-                                        index={index}>
+                                        key={id}
+                                        draggableId={task}
+                                        index={id}>
                                         {(provided, snapshot) => (
                                             <div
                                                 ref={provided.innerRef}
@@ -137,6 +141,7 @@ class MultipleDragList extends Component {
                         {(provided, snapshot) => (
                             <div
                                 ref={provided.innerRef}
+                                class="column"
                                 style={getListStyle(snapshot.isDraggingOver)}>
                                 {this.state.selected.map((item, index) => (
                                     <Draggable

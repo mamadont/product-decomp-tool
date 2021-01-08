@@ -41,7 +41,6 @@ class App extends React.Component {
       <h1> Problem Decomposition Tool </h1>
         <div id="tool-container"> 
           <DragDropContext onDragEnd={this.onDragEnd}>
-            
             <Droppable droppableId="droppable-1">
                 {(provided) => (
                     <div 
@@ -67,20 +66,6 @@ class App extends React.Component {
                     </div>
                 )}
             </Droppable>
-
-            <Droppable droppableId="droppable-2">
-                {(provided) => (
-                    <div 
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                        id="column"
-                    > 
-                     
-                        {provided.placeholder}
-                    </div>
-                )}
-            </Droppable>
-            
           </DragDropContext>
         </div>
     </div>
