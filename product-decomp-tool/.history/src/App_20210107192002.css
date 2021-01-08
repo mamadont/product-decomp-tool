@@ -1,0 +1,38 @@
+body {
+  background: rgb(115,207,202);
+  background: linear-gradient(90deg, rgba(115,207,202,1) 28%, rgba(255,255,255,1) 100%);
+}
+
+#app {
+  text-align: center;
+  color: #3AAFA9; 
+}
+
+#tool-container {
+ height: 80vh;
+ width: 80vw;
+ background-color: #2B7A78;
+ position: fixed;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ border-radius: 25px;
+}
+
+#tool-grid{
+  height: 100%;
+  width: 100%;
+}
+
+h1 { 
+  text-align: center;
+}
+
+#column { 
+  background-color: #FEFFFF;
+  height: 75vh;
+  width: 45%;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 25px; 
+}
