@@ -88,6 +88,7 @@ function App() {
                           background: snapshot.isDraggingOver
                             ? "lightblue"
                             : "lightgrey",
+                          
                         }}
                       >
                         {column.items.map((item, index) => {
@@ -100,11 +101,14 @@ function App() {
                               {(provided, snapshot) => {
                                 return (
                                   <div
-                                  className="task-card"
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                     style={{
+                                      userSelect: "none",
+                                      padding: 16,
+                                      margin: "0 0 8px 0",
+                                      minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
                                         ? "#263B4A"
                                         : "#456C86",

@@ -17,10 +17,8 @@
 }
 
 .task-card{
-  user-select: none;
-  padding: 16px;
-  margin: 0 0 8px 0; 
-  minHeight: 50px;
-  
+  userSelect: "none",
+  padding: 16,
+  margin: "0 0 8px 0",
+  minHeight: "50px",
 }
-

@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
-import './App.css';
 
-const tasks = [
-  { id: uuid(), content: "First task", week: 1 },
-  { id: uuid(), content: "Second task", week: 2 },
-  { id: uuid(), content: "Third task", week: 3 },
-  { id: uuid(), content: "Fourth task", week: 4 },
-  { id: uuid(), content: "Fifth task", week: 5 }
+const itemsFromBackend = [
+  { id: uuid(), content: "First task" },
+  { id: uuid(), content: "Second task" },
+  { id: uuid(), content: "Third task" },
+  { id: uuid(), content: "Fourth task" },
+  { id: uuid(), content: "Fifth task" }
 ];
 
 const columnsFromBackend = {
   [uuid()]: {
     name: "Unordered Tasks",
-    items: tasks
+    items: itemsFromBackend
   },
   [uuid()]: {
     name: "Ordered Tasks",
@@ -26,7 +25,6 @@ const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
   const { source, destination } = result;
 
-  // Reordering within the same column
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
@@ -45,9 +43,7 @@ const onDragEnd = (result, columns, setColumns) => {
         items: destItems
       }
     });
-  }
-  // If the draggable is placed in a different column 
-  else {
+  } else {
     const column = columns[source.droppableId];
     const copiedItems = [...column.items];
     const [removed] = copiedItems.splice(source.index, 1);
@@ -65,14 +61,18 @@ const onDragEnd = (result, columns, setColumns) => {
 function App() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
-    <div className="app">
+    <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       <DragDropContext
         onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
       >
         {Object.entries(columns).map(([columnId, column], index) => {
           return (
             <div
-              className="column-container"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
               key={columnId}
             >
               <h2>{column.name}</h2>
@@ -83,11 +83,13 @@ function App() {
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
-                        className="column"
                         style={{
                           background: snapshot.isDraggingOver
                             ? "lightblue"
                             : "lightgrey",
+                          padding: 4,
+                          width: 250,
+                          minHeight: 500
                         }}
                       >
                         {column.items.map((item, index) => {
@@ -100,11 +102,14 @@ function App() {
                               {(provided, snapshot) => {
                                 return (
                                   <div
-                                  className="task-card"
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}
                                     style={{
+                                      userSelect: "none",
+                                      padding: 16,
+                                      margin: "0 0 8px 0",
+                                      minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
                                         ? "#263B4A"
                                         : "#456C86",

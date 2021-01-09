@@ -12,15 +12,7 @@
 
 .column {
   padding: 4px;
-  width: 250px;
-  min-height: 500px;
-}
+  padding 
+                          
 
-.task-card{
-  user-select: none;
-  padding: 16px;
-  margin: 0 0 8px 0; 
-  minHeight: 50px;
-  
 }
-
