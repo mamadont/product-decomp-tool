@@ -22,20 +22,20 @@ const columnsFromBackend = {
   },
 };
 
+const outputComments = (columnsFromBackend) => {
+  // Destructuring the columnsFromBackend object 
 
-const printComments = function(){
-  
-
-  let res = onDragEnd;
-  console.log(res);
+  let { ordered } = columnsFromBackend;
+  console.log(ordered);
 }
 
-const onDragEnd = (result, columns, setColumns)  => {
+const onDragEnd = (result, columns, setColumns) => {
+  outputComments();
 
   if (!result.destination) return;
   const { source, destination } = result;
 
-  // If the draggable is placed in a different column 
+  // Reordering within the same column
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
@@ -55,8 +55,7 @@ const onDragEnd = (result, columns, setColumns)  => {
       }
     });
   }
-  
-  // Reordering within the same column
+  // If the draggable is placed in a different column 
   else {
     const column = columns[source.droppableId];
     const copiedItems = [...column.items];
@@ -67,10 +66,9 @@ const onDragEnd = (result, columns, setColumns)  => {
       [source.droppableId]: {
         ...column,
         items: copiedItems
-      },
+      }
     });
   }
-  
 };
 
 
@@ -141,7 +139,6 @@ function App() {
           );
         })}
       </DragDropContext>
-      <button onClick={printComments}>Print Comments </button>
     </div>
   );
 }

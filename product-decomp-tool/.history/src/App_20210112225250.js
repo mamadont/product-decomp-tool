@@ -70,7 +70,9 @@ const onDragEnd = (result, columns, setColumns)  => {
       },
     });
   }
+
   
+  return result;
 };
 
 

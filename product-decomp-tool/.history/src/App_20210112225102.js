@@ -26,8 +26,7 @@ const columnsFromBackend = {
 const printComments = function(){
   
 
-  let res = onDragEnd;
-  console.log(res);
+  console.log("Hhs");
 }
 
 const onDragEnd = (result, columns, setColumns)  => {
@@ -54,6 +53,7 @@ const onDragEnd = (result, columns, setColumns)  => {
         items: destItems
       }
     });
+    console.log(destItems);
   }
   
   // Reordering within the same column
@@ -70,6 +70,9 @@ const onDragEnd = (result, columns, setColumns)  => {
       },
     });
   }
+
+  let { ordered } = columns;
+  console.log(ordered);
   
 };
 

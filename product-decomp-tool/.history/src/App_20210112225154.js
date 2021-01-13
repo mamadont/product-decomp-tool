@@ -26,8 +26,7 @@ const columnsFromBackend = {
 const printComments = function(){
   
 
-  let res = onDragEnd;
-  console.log(res);
+  console.log("Hhs");
 }
 
 const onDragEnd = (result, columns, setColumns)  => {
@@ -70,7 +69,9 @@ const onDragEnd = (result, columns, setColumns)  => {
       },
     });
   }
+
   
+  return result;
 };
 
 
