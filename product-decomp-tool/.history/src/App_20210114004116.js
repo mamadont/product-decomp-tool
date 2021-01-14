@@ -80,12 +80,7 @@ class App extends React.Component {
 
     var printC = () => {
       var modal = document.getElementById("modal");
-      var close = document.getElementById("close-btn");
       modal.style.display = "block";
-
-      close.onclick = () =>{
-        modal.style.display = "none";
-      }
 
     }
 

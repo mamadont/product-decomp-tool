@@ -1,0 +1,32 @@
+.app {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.column-contianer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column {
+  padding: 4px;
+  width: 250px;
+  min-height: 500px;
+}
+
+.task-card{
+  user-select: none;
+  padding: 16px;
+  margin: 0 0 8px 0; 
+  minHeight: 50px;
+  
+}
+
+#modal{
+  height: 300px;
+  width: 300px;
+  border-color: blue;
+  display:none;
+}

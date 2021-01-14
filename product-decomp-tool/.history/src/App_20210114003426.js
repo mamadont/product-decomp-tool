@@ -79,14 +79,8 @@ class App extends React.Component {
     }
 
     var printC = () => {
-      var modal = document.getElementById("modal");
-      var close = document.getElementById("close-btn");
+      var modal = document.getElementById("modal")
       modal.style.display = "block";
-
-      close.onclick = () =>{
-        modal.style.display = "none";
-      }
-
     }
 
     var columns = this.state;
@@ -159,8 +153,7 @@ class App extends React.Component {
           </DragDropContext>
             
           <div id="modal">
-            <div className="modal-content">
-              <span id="close-btn" class="close">&times;</span>
+            <div>
               <h3> Copy comments below </h3>
               {this.state.ordered.items.map((item, index) => {
                 return(

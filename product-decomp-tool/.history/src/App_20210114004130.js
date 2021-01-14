@@ -83,10 +83,6 @@ class App extends React.Component {
       var close = document.getElementById("close-btn");
       modal.style.display = "block";
 
-      close.onclick = () =>{
-        modal.style.display = "none";
-      }
-
     }
 
     var columns = this.state;
