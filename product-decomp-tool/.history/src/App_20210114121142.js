@@ -169,8 +169,13 @@ class App extends React.Component {
               })}
             </div>
           </div>
+          <button class="btn" onClick={printC}>Print comments</button>
+
         </div>
-        <button id="btn" onClick={printC}>Print comments</button>
+
+        
+
+        
       </div>
       
     );

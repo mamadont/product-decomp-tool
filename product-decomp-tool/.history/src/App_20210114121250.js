@@ -170,7 +170,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-        <button id="btn" onClick={printC}>Print comments</button>
+        <button class="btn" onClick={printC}>Print comments</button>
       </div>
       
     );

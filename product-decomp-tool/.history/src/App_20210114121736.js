@@ -93,6 +93,8 @@ class App extends React.Component {
 
     return (
       <div className="app">
+                <button onClick={printC}>Print comments</button>
+
         <div className="drag-context">
           <DragDropContext
             onDragEnd={(result) => onDragEnd(result, columns)}
@@ -170,7 +172,6 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-        <button id="btn" onClick={printC}>Print comments</button>
       </div>
       
     );
