@@ -92,7 +92,6 @@ class App extends React.Component {
     var columns = this.state;
 
     return (
-      
       <div className="app">
         <div className="drag-context">
           <DragDropContext
@@ -104,7 +103,7 @@ class App extends React.Component {
                   className="column-container"
                   key={columnId}
                 >
-                  <h2 className="headers">{column.name}</h2>
+                  <h2 style={{textAlign: 'center'}}>{column.name}</h2>
                   <div style={{ margin: 8 }}>
                     <Droppable droppableId={columnId} key={columnId}>
                       {(provided, snapshot) => {

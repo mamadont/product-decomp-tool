@@ -92,7 +92,6 @@ class App extends React.Component {
     var columns = this.state;
 
     return (
-      
       <div className="app">
         <div className="drag-context">
           <DragDropContext

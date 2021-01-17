@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .drag-context {
@@ -20,23 +19,17 @@
 }
 
 .column {
-  padding: 20px;
-  width: 450px;
+  padding: 4px;
+  width: 100%;
   min-height: 500px;
   border-radius: 25px;
-  background-color: black;
-
 }
 
 .task-card{
   user-select: none;
   padding: 16px;
   margin: 0 0 8px 0; 
-  font-size: 20px;
   minHeight: 50px;
-  border-radius: 15px;
-  text-align: center;
-  background-color: #F5D10D;
   
 }
 
@@ -61,6 +54,7 @@
   width: 80%; 
 }
 
+/* The Close Button */
 .close {
   color: #aaa;
   float: right;
@@ -77,15 +71,6 @@
 
 #btn{
   width: 30%;
-  margin-left: 35%;
-  border-radius: 25px;
-  color: #F5D10D;
-  height: 30px;
-  background-color: black;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
+  margin-left: 35%
 }
 
-.headers {
-  text-align: center;
-}

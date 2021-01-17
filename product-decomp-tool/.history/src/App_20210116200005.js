@@ -94,6 +94,7 @@ class App extends React.Component {
     return (
       
       <div className="app">
+        <title>App</title>
         <div className="drag-context">
           <DragDropContext
             onDragEnd={(result) => onDragEnd(result, columns)}

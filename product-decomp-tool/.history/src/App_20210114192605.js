@@ -92,7 +92,6 @@ class App extends React.Component {
     var columns = this.state;
 
     return (
-      
       <div className="app">
         <div className="drag-context">
           <DragDropContext
@@ -104,7 +103,7 @@ class App extends React.Component {
                   className="column-container"
                   key={columnId}
                 >
-                  <h2 className="headers">{column.name}</h2>
+                  <h2>{column.name}</h2>
                   <div style={{ margin: 8 }}>
                     <Droppable droppableId={columnId} key={columnId}>
                       {(provided, snapshot) => {
@@ -115,13 +114,14 @@ class App extends React.Component {
                             className="column"
                             style={{
                               background: snapshot.isDraggingOver
-                                ? "#343d52"
-                                : "black",
+                                ? "lightblue"
+                                : "lightgrey",
                             }}
                           >
                             {column.items.map((item, index) => {
                               return (
                                 <Draggable
+                                className="task-card"
                                   key={item.id}
                                   draggableId={item.id}
                                   index={index}
@@ -129,15 +129,15 @@ class App extends React.Component {
                                   {(provided, snapshot) => {
                                     return (
                                       <div
-                                      className="task-card"
+                                      
                                         ref={provided.innerRef}
                                         {...provided.draggableProps}
                                         {...provided.dragHandleProps}
                                         style={{
                                           backgroundColor: snapshot.isDragging
-                                            ? "#858b97"
-                                            : "#F5D10D",
-                                          color: "black",
+                                            ? "#263B4A"
+                                            : "#456C86",
+                                          color: "white",
                                           ...provided.draggableProps.style
                                         }}
                                       >
