@@ -11,15 +11,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 4
 }
 
-
-
-.concepts {
-  padding-right: 5px;
-  color: #eaeaea;
-  text-decoration: none;
+.concept-card{
+  padding: 16px;
   font-size: 20px;
-
+  border-radius: 15px;
+  text-align: center;
+  background-color: #eaeaea;
 }
 

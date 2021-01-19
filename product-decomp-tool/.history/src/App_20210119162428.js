@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
-import Page1 from './components/page-1';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import Page1 from './components/page-1';
 
 class App extends React.Component {
   render(){
@@ -15,24 +15,21 @@ class App extends React.Component {
         <h3> Please select a concept to get started: </h3>
 
         <Router> 
-          
-          
           <div className="card-container">
               {concepts.map((item, index) => {
               return(
-                <Link to="/page1"> <p className="concepts">{item}</p> </Link>   
+                  <div className="concept-card">
+                    <Link to="./components/page-1.js"> <p>{item}</p> </Link> 
+                  </div>
                 );
               })}
           </div>
-          <div> 
-            <Switch>
-              <Route exact path="/" component={App}/>
-              <Route path="/page1" component={Page1}/>
-            </Switch> 
-          </div>           
         </Router>
 
-        
+        <Switch>
+          <Route exact path="/"></Route>
+          <Route path="./components/page-1.js"></Route>
+        </Switch>
         
         
       </div>

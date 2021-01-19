@@ -1,7 +1,7 @@
 {
   "name": "product-decomp-tool",
   "version": "0.1.0",
-  "homepage": "plan.cosc236.com",
+  "homepage": "plan.cocs236.com",
   "private": true,
   "dependencies": {
     "@dnd-kit/core": "^1.0.0",

@@ -20,7 +20,7 @@ class App extends React.Component {
           <div className="card-container">
               {concepts.map((item, index) => {
               return(
-                <Link to="/page1"> <p className="concepts">{item}</p> </Link>   
+                <Link to="/page1"> <p>{item}</p> </Link>   
                 );
               })}
           </div>

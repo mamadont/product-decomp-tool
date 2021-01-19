@@ -13,13 +13,12 @@
   justify-content: center;
 }
 
-
-
-.concepts {
-  padding-right: 5px;
-  color: #eaeaea;
-  text-decoration: none;
+.concept-card{
+  padding: 16px;
   font-size: 20px;
-
+  width: 40%;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #eaeaea;
 }
 

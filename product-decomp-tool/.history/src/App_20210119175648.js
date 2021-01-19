@@ -15,21 +15,18 @@ class App extends React.Component {
         <h3> Please select a concept to get started: </h3>
 
         <Router> 
-          
+          <Switch>
+            <Route exact path="/" component={App}/>
+            <Route path="/page1" component={Page1}/>
+          </Switch>
           
           <div className="card-container">
               {concepts.map((item, index) => {
               return(
-                <Link to="/page1"> <p className="concepts">{item}</p> </Link>   
+                <Link to="/page1"> <p>{item}</p> </Link>   
                 );
               })}
-          </div>
-          <div> 
-            <Switch>
-              <Route exact path="/" component={App}/>
-              <Route path="/page1" component={Page1}/>
-            </Switch> 
-          </div>           
+          </div>            
         </Router>
 
         

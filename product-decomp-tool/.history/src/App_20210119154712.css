@@ -10,16 +10,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
-
-
-.concepts {
-  padding-right: 5px;
-  color: #eaeaea;
-  text-decoration: none;
+.concept-card{
+  padding: 16px;
+  margin: 0 0 8px 0; 
   font-size: 20px;
-
+  minHeight: 50px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #eaeaea;
 }
 
