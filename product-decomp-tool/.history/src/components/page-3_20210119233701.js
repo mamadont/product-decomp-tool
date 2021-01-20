@@ -11,7 +11,7 @@ const tasks = [
   ];
 
 
-  class Page9 extends React.Component {
+  class Page1 extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -174,4 +174,4 @@ const tasks = [
     
   }
 
-  export default Page9;
+  export default Page3;

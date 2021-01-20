@@ -4,14 +4,14 @@ import uuid from "uuid/v4";
 import './page-1.css';
 
 const tasks = [
-    { id: uuid(), content: "Increment in the code body"},
-    { id: uuid(), content: "Execute while loop body"},
-    { id: uuid(), content: "Test condition"}
-    
+    { id: uuid(), content: "Initialize"},
+    { id: uuid(), content: "Check condition"},
+    { id: uuid(), content: "Execute the body of the for loop" },
+    { id: uuid(), content: "Increment the for loop" }
   ];
 
 
-  class Page9 extends React.Component {
+  class Page1 extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -174,4 +174,4 @@ const tasks = [
     
   }
 
-  export default Page9;
+  export default Page1;

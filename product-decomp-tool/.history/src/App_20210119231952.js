@@ -4,12 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Page1 from './components/page-1';
 import Page2 from './components/page-2';
 import Page3 from './components/page-3';
-import Page4 from './components/page-4';
-import Page5 from './components/page-5';
-import Page6 from './components/page-6';
-import Page7 from './components/page-7';
-import Page8 from './components/page-8';
-import Page9 from './components/page-9';
 
 class App extends React.Component {
   render(){
@@ -48,12 +42,6 @@ class App extends React.Component {
               <Route path="/page1" component={Page1}/>
               <Route path="/page2" component={Page2}/>
               <Route path="/page3" component={Page3}/>
-              <Route path="/page4" component={Page4}/>
-              <Route path="/page5" component={Page5}/>
-              <Route path="/page6" component={Page6}/>
-              <Route path="/page7" component={Page7}/>
-              <Route path="/page8" component={Page8}/>
-              <Route path="/page9" component={Page9}/>
             </Switch> 
           </div>           
         </Router>
