@@ -9,6 +9,7 @@ const tasks = [
     { id: uuid(), content: "If conditions are not satisfied go to else block" },
   ];
 
+const data = Data;
 
   class Page1 extends React.Component {
     constructor(props) {

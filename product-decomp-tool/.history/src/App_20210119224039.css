@@ -6,11 +6,15 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
 }
+Router{
+
+}
 .card-container{  
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 
@@ -20,7 +24,6 @@
   color: #eaeaea;
   font-size: 20px;
 }
-  
 
 
 

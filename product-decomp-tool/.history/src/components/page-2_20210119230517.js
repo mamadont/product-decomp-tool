@@ -4,11 +4,12 @@ import uuid from "uuid/v4";
 import './page-1.css';
 
 const tasks = [
-    { id: uuid(), content: "Check conditions"},
-    { id: uuid(), content: "If conditions are satisfied, go to if block"},
-    { id: uuid(), content: "If conditions are not satisfied go to else block" },
+    { id: uuid(), content: "Task 1"},
+    { id: uuid(), content: "Task 2"},
+    { id: uuid(), content: "Task 3" },
   ];
 
+const data = Data;
 
   class Page1 extends React.Component {
     constructor(props) {

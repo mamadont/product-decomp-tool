@@ -7,17 +7,8 @@ import Page2 from './components/page-2';
 class App extends React.Component {
   render(){
 
-    const concepts = [
-      {task: 'Selection', route: '/page1'}, 
-      {task: 'For-Loops', route: '/page2'},
-      {task: 'While-Loops', route: '/page3'},
-      {task: 'Files', route: '/page4'},
-      {task: 'Methods', route: '/page5'},
-      {task: 'Objects', route: '/page6'},
-      {task: 'Arrays', route: '/route7'},
-      {task: 'Classes', route: '/route8'},
-      {task: 'Recursion', route: '/route9'},
-      ];
+    const concepts = ["Selection", "For-Loops", "While-Loops", "Files",
+     "Methods", "Objects", "Arrays", "Classes", "Recursion"];
 
     return (
       
@@ -31,7 +22,7 @@ class App extends React.Component {
           <div className="card-container">
               {concepts.map((item, index) => {
               return(
-                <Link to={item.route}> <a className="concepts">{item.task}</a> </Link>   
+                <Link to="/page1"> <a className="concepts">{item}</a> </Link>   
                 );
               })}
           </div>

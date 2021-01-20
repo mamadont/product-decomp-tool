@@ -11,6 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 
@@ -18,9 +19,9 @@
 .concepts {
   padding-right: 5px;
   color: #eaeaea;
+  text-decoration: none;
   font-size: 20px;
 }
-  
 
 
 
