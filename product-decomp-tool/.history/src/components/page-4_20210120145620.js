@@ -4,13 +4,10 @@ import uuid from "uuid/v4";
 import './page-1.css';
 
 const tasks = [
-    { id: uuid(), content: "Loop through the file"},
-    { id: uuid(), content: "Import the java file class"},
     { id: uuid(), content: "Initialize a scanner"},
+    { id: uuid(), content: "Import the java file class"},
     { id: uuid(), content: "Import the java scanner class"},
-    { id: uuid(), content: "Execute algorithm in the loop"},
-    { id: uuid(), content: "Close the scanner"},
-    
+    { id: uuid(), content: "Loop through the file"}
     
   ];
 

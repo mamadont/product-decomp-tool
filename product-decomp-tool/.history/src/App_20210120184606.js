@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Page1 from './components/page-1';
 import Page2 from './components/page-2';
 import Page3 from './components/page-3';
@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       
       <div className="app">
-        <h1> Welcome to the COSC 236 Product Decomposition Tool !</h1>
+        <h1> Welcome to the COSC 236 Product Decomposition Tool!</h1>
         <h3> Please select a concept to get started: </h3>
 
         <Router> 
@@ -41,7 +41,8 @@ class App extends React.Component {
               })}
           </div>
           <div> 
-            <Switch> 
+            <Switch>
+              <Route exact path="/" component={App}/>
               <Route path="/page1" component={Page1}/>
               <Route path="/page2" component={Page2}/>
               <Route path="/page3" component={Page3}/>
@@ -50,7 +51,7 @@ class App extends React.Component {
               <Route path="/page6" component={Page6}/>
               <Route path="/page7" component={Page7}/>
               <Route path="/page8" component={Page8}/>
-              <Route path="/page9" component={Page9}/> 
+              <Route path="/page9" component={Page9}/>
             </Switch> 
           </div>           
         </Router>

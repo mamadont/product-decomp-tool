@@ -4,18 +4,14 @@ import uuid from "uuid/v4";
 import './page-1.css';
 
 const tasks = [
-    { id: uuid(), content: "Loop through the file"},
-    { id: uuid(), content: "Import the java file class"},
-    { id: uuid(), content: "Initialize a scanner"},
-    { id: uuid(), content: "Import the java scanner class"},
-    { id: uuid(), content: "Execute algorithm in the loop"},
-    { id: uuid(), content: "Close the scanner"},
-    
+    { id: uuid(), content: "Methods task 1"},
+    { id: uuid(), content: "Methods task 2"},
+    { id: uuid(), content: "Methods task 3"},
     
   ];
 
 
-  class Page4 extends React.Component {
+  class Page5 extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -178,4 +174,4 @@ const tasks = [
     
   }
 
-  export default Page4;
+  export default Page5;

@@ -41,7 +41,8 @@ class App extends React.Component {
               })}
           </div>
           <div> 
-            <Switch> 
+            <Switch>
+              <Route exact path="/" component={App}/>
               <Route path="/page1" component={Page1}/>
               <Route path="/page2" component={Page2}/>
               <Route path="/page3" component={Page3}/>
@@ -50,7 +51,7 @@ class App extends React.Component {
               <Route path="/page6" component={Page6}/>
               <Route path="/page7" component={Page7}/>
               <Route path="/page8" component={Page8}/>
-              <Route path="/page9" component={Page9}/> 
+              <Route path="/page9" component={Page9}/>
             </Switch> 
           </div>           
         </Router>

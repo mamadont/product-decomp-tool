@@ -9,6 +9,7 @@ const tasks = [
     { id: uuid(), content: "Initialize a scanner"},
     { id: uuid(), content: "Import the java scanner class"},
     { id: uuid(), content: "Execute algorithm in the loop"},
+    { id: uuid(), content: "Update condition in the loop"},
     { id: uuid(), content: "Close the scanner"},
     
     
