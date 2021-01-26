@@ -4,15 +4,13 @@ import uuid from "uuid/v4";
 import './page-1.css';
 
 const tasks = [
-    { id: uuid(), content: "Check condition"},
-    { id: uuid(), content: "Initialize"},
-    { id: uuid(), content: "Increment the for loop" },
-    { id: uuid(), content: "Execute the body of the for loop" },
-    
+    { id: uuid(), content: "If conditions are satisfied, go to if block"},
+    { id: uuid(), content: "If conditions are not satisfied go to else block" },
+    { id: uuid(), content: "Check conditions"},
   ];
 
 
-  class Page2 extends React.Component {
+  class Page1 extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -175,4 +173,4 @@ const tasks = [
     
   }
 
-  export default Page2;
+  export default Page1;

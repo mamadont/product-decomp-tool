@@ -4,7 +4,11 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import './components/page-1.css';
 import uuid from "uuid/v4";
 
-const tasks = [];
+const tasks = [
+  { id: uuid(), content: "If conditions are satisfied, go to if block"},
+  { id: uuid(), content: "If conditions are not satisfied go to else block" },
+  { id: uuid(), content: "Check conditions"},
+];
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -20,54 +24,28 @@ class App extends React.Component {
     };
   }
 
-    // Generates card based on index
-    addIf = (index) => { 
-        switch(index){
-          case 0: 
-            tasks.push({id: uuid(), content: "If"});
-          break;
-
-          case 1: 
-            tasks.push({id: uuid(), content: "Else"});
-          break;
-
-          case 2: 
-            tasks.push({id: uuid(), content: "Begin Loop"});
-            tasks.push({id: uuid(), content: "End Loop"});
-          break;
-
-          case 3: 
-            tasks.push({id: uuid(), content: "Create file"});
-          break;
-          
-          case 4: 
-            tasks.push({id: uuid(), content: "Create method"});
-            tasks.push({id: uuid(), content: "Call method"});
-          break;
-
-          case 5: 
-            tasks.push({id: uuid(), content: "Create object"});
-            tasks.push({id: uuid(), content: "Instantiate object"});
-          break;
-
-          case 6: 
-            tasks.push({id: uuid(), content: "Initialize array"});
-          break;
-
-          case 7: 
-            tasks.push({id: uuid(), content: "Create class"});
-          break;
-  
-          default:
-            console.log("Invalid index");
-        }
-        
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
+  // Generates card based on index
+  addIf = (index) => { 
+      switch(index){
+        case 0: 
+          tasks.push({id: uuid(), content: "If"});
+        break;
+        case 1: 
+          tasks.push({id: uuid(), content: "Else"});
+        break;
+        case 2: 
+          tasks.push({id: uuid(), content: "For Loop"});
+        break;
+        default:
+          console.log("Invalid index");
       }
+      
+      this.setState({
+        unordered: {
+          items: tasks
+        }
+      })
+    }
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -134,11 +112,13 @@ class App extends React.Component {
       {task: 'If', index: 1}, 
       {task: 'Else', index: 2},
       {task: 'For-Loop', index: 3},
+      {task: 'While-Loop', index: 4},
       {task: 'Create File', index: 5},
       {task: 'Create Method', index: 6},
       {task: 'Create Object', index: 7},
       {task: 'Create Array', index: 8},
       {task: 'Create Class', index: 9},
+      {task: 'Recursion', index: 10},
     ];
 
     var columns = this.state;
@@ -151,7 +131,7 @@ class App extends React.Component {
         <div>
           {concepts.map((item, index) => {
           return(
-            <button className="btn" onClick={() => this.addIf(index)}>{item.task}</button>
+            <button onClick={() => this.addIf(index)}>{item.task}</button>
             );
            })}
         </div>

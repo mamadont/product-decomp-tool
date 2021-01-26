@@ -3,20 +3,12 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
 import './page-1.css';
 
-const tasks = [
-    { id: uuid(), content: "Loop through the file"},
-    { id: uuid(), content: "Import the java file class"},
-    { id: uuid(), content: "Initialize a scanner"},
-    { id: uuid(), content: "Import the java scanner class"},
-    { id: uuid(), content: "Execute algorithm in the loop"},
-    { id: uuid(), content: "Close the scanner"},
-    
-    
-  ];
 
 
-  class Page4 extends React.Component {
+
+  class Page1 extends React.Component {
     constructor(props) {
+      {this.props.tasks}
       super(props);
       this.state = {
         'unordered': {
@@ -178,4 +170,4 @@ const tasks = [
     
   }
 
-  export default Page4;
+  export default Page1;

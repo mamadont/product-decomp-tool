@@ -2,9 +2,14 @@ import React from "react";
 import './App.css';
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import './components/page-1.css';
+import Page1 from './components/page-1';
 import uuid from "uuid/v4";
 
-const tasks = [];
+const tasks = [
+  { id: uuid(), content: "If conditions are satisfied, go to if block"},
+  { id: uuid(), content: "If conditions are not satisfied go to else block" },
+  { id: uuid(), content: "Check conditions"},
+];
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,56 +24,8 @@ class App extends React.Component {
       },
     };
   }
-
-    // Generates card based on index
-    addIf = (index) => { 
-        switch(index){
-          case 0: 
-            tasks.push({id: uuid(), content: "If"});
-          break;
-
-          case 1: 
-            tasks.push({id: uuid(), content: "Else"});
-          break;
-
-          case 2: 
-            tasks.push({id: uuid(), content: "Begin Loop"});
-            tasks.push({id: uuid(), content: "End Loop"});
-          break;
-
-          case 3: 
-            tasks.push({id: uuid(), content: "Create file"});
-          break;
-          
-          case 4: 
-            tasks.push({id: uuid(), content: "Create method"});
-            tasks.push({id: uuid(), content: "Call method"});
-          break;
-
-          case 5: 
-            tasks.push({id: uuid(), content: "Create object"});
-            tasks.push({id: uuid(), content: "Instantiate object"});
-          break;
-
-          case 6: 
-            tasks.push({id: uuid(), content: "Initialize array"});
-          break;
-
-          case 7: 
-            tasks.push({id: uuid(), content: "Create class"});
-          break;
-  
-          default:
-            console.log("Invalid index");
-        }
-        
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-      }
-     onDragEnd = (result, columns)  => {
+  render(){
+    var onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
       const { source, destination } = result;
@@ -115,7 +72,7 @@ class App extends React.Component {
       }  
     }
 
-    printC = () => {
+    var printC = () => {
       var modal = document.getElementById("modal");
       var close = document.getElementById("close-btn");
       modal.style.display = "block";
@@ -125,20 +82,34 @@ class App extends React.Component {
       }
 
     }
-  render(){
-    
 
-    
+    // Generates card based on index
+    const addIf = (index) => { 
+      switch(index){
+        case 1: 
+        tasks.push({ id: uuid(), content: "If"});
+        break;
+      }
+      
+      this.setState({
+        unordered: {
+          items: tasks
+        }
+      })
+
+    }
 
     const concepts = [
-      {task: 'If', index: 1}, 
-      {task: 'Else', index: 2},
-      {task: 'For-Loop', index: 3},
-      {task: 'Create File', index: 5},
-      {task: 'Create Method', index: 6},
-      {task: 'Create Object', index: 7},
-      {task: 'Create Array', index: 8},
-      {task: 'Create Class', index: 9},
+      {task: 'If'}, 
+      {task: 'Else'},
+      {task: 'For-Loop'},
+      {task: 'While-Loop'},
+      {task: 'Create File'},
+      {task: 'Create Method'},
+      {task: 'Create Object'},
+      {task: 'Create Array'},
+      {task: 'Create Class'},
+      {task: 'Recursion'},
     ];
 
     var columns = this.state;
@@ -151,7 +122,7 @@ class App extends React.Component {
         <div>
           {concepts.map((item, index) => {
           return(
-            <button className="btn" onClick={() => this.addIf(index)}>{item.task}</button>
+            <button onClick={addIf({index})}>{item.task}</button>
             );
            })}
         </div>
@@ -160,7 +131,7 @@ class App extends React.Component {
             <div className="page-app">
             <div className="drag-context">
               <DragDropContext
-                onDragEnd={(result) => this.onDragEnd(result, columns)}
+                onDragEnd={(result) => onDragEnd(result, columns)}
               >
                 {Object.entries(columns).map(([columnId, column], index) => {
                   return (
@@ -235,7 +206,7 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
-            <button id="btn" onClick={this.printC}>Print comments</button>
+            <button id="btn" onClick={printC}>Print comments</button>
           </div>
           </div>           
       </div>

@@ -12,11 +12,10 @@
   justify-content: center;
 }
 
-.btn {
-  background-color:white;
-  color: #00635D;
-  margin-left: 5px;
-  border-radius: 25px;
+.btn{
+  background-color:#00635D;
+  color: white;
+  padding-right: 5px;
 }
 
 

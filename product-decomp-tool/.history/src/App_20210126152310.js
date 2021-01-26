@@ -151,7 +151,7 @@ class App extends React.Component {
         <div>
           {concepts.map((item, index) => {
           return(
-            <button className="btn" onClick={() => this.addIf(index)}>{item.task}</button>
+            <button onClick={() => this.addIf(index)}>{item.task}</button>
             );
            })}
         </div>

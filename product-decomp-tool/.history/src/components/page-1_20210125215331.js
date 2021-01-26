@@ -3,16 +3,16 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
 import './page-1.css';
 
-const tasks = [
-    { id: uuid(), content: "Objects task 1"},
-    { id: uuid(), content: "Objects task 2"},
-    { id: uuid(), content: "Objects task 3"}
-    
-  ];
 
 
-  class Page6 extends React.Component {
+
+  class Page1 extends React.Component {
     constructor(props) {
+      const tasks = [
+    { id: uuid(), content: "If conditions are satisfied, go to if block"},
+    { id: uuid(), content: "If conditions are not satisfied go to else block" },
+    { id: uuid(), content: "Check conditions"},
+  ];
       super(props);
       this.state = {
         'unordered': {
@@ -174,4 +174,4 @@ const tasks = [
     
   }
 
-  export default Page6;
+  export default Page1;
