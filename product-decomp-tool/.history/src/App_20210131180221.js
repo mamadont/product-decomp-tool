@@ -78,18 +78,8 @@ class App extends React.Component {
 
         // Loop through array and mutate
         tasks.map((item) => {
-          if(item.content = id){
-            item = tempTask;
-          }
+          
         })
-
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-
-
 
         
 

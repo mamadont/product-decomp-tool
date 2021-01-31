@@ -72,26 +72,13 @@ class App extends React.Component {
         // Store text in input field
         var input = document.getElementById(id).value;
 
-        // Change task hint
+        // Store the original task
         var tempTask = tasks.find(task => task.content = id);
         tempTask.hint = input; 
 
         // Loop through array and mutate
-        tasks.map((item) => {
-          if(item.content = id){
-            item = tempTask;
-          }
-        })
-
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
 
 
-
-        
 
         alert(tempTask.hint)
       }

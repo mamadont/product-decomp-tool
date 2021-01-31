@@ -38,12 +38,12 @@ class App extends React.Component {
           
           case 4: 
             tasks.push({id: uuid(), content: "Create method", hint: "Method name"});
-            tasks.push({id: uuid(), content: "Call method", hint: "Method name"});
+            tasks.push({id: uuid(), content: "Call method"});
           break;
 
           case 5: 
-            tasks.push({id: uuid(), content: "Create object", hint: "Object name"});
-            tasks.push({id: uuid(), content: "Instantiate object", hint: "Object name"});
+            tasks.push({id: uuid(), content: "Create object"});
+            tasks.push({id: uuid(), content: "Instantiate object"});
           break;
 
           case 6: 
@@ -64,38 +64,6 @@ class App extends React.Component {
           }
         })
       }
-
-      changeHint = (id) => {
-        // Get an instance of the tasks array 
-        var tasks = this.state.unordered.items;
-
-        // Store text in input field
-        var input = document.getElementById(id).value;
-
-        // Change task hint
-        var tempTask = tasks.find(task => task.content = id);
-        tempTask.hint = input; 
-
-        // Loop through array and mutate
-        tasks.map((item) => {
-          if(item.content = id){
-            item = tempTask;
-          }
-        })
-
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-
-
-
-        
-
-        alert(tempTask.hint)
-      }
-
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -231,7 +199,7 @@ class App extends React.Component {
                                           >
                                             <div className="btn-content">
                                               {item.content}
-                                              <input id={item.content} onBlur={() => this.changeHint(item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                              <input type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                             </div> 
                                           </div>
                                         );
@@ -256,7 +224,7 @@ class App extends React.Component {
                   <h3> Copy comments below </h3>
                   {this.state.unordered.items.map((item, index) => {
                     return(
-                      <p> // {item.content} {item.hint}</p>
+                      <p> // {item.content}</p>
                     );
                   })}
                 </div>

@@ -33,6 +33,7 @@
   background-color: #00635D;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
+  z-index: -1;
 }
 
 .btn-content {

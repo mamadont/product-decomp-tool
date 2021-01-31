@@ -9,8 +9,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      'unordered': {
-        name: "Unordered Steps",
+      'Steps': {
+        name: "Unordered Tasks",
         items: tasks
       },
     };
@@ -20,7 +20,7 @@ class App extends React.Component {
     add = (index) => { 
         switch(index){
           case 0: 
-            tasks.push({id: uuid(), content: "If", hint: "Condition"});
+            tasks.push({id: uuid(), content: "If"});
           break;
 
           case 1: 
@@ -28,22 +28,22 @@ class App extends React.Component {
           break;
 
           case 2: 
-            tasks.push({id: uuid(), content: "Begin Loop",  hint:"Loop Condition"});
+            tasks.push({id: uuid(), content: "Begin Loop"});
             tasks.push({id: uuid(), content: "End Loop"});
           break;
 
           case 3: 
-            tasks.push({id: uuid(), content: "Create file", hint: "File name"});
+            tasks.push({id: uuid(), content: "Create file"});
           break;
           
           case 4: 
-            tasks.push({id: uuid(), content: "Create method", hint: "Method name"});
-            tasks.push({id: uuid(), content: "Call method", hint: "Method name"});
+            tasks.push({id: uuid(), content: "Create method"});
+            tasks.push({id: uuid(), content: "Call method"});
           break;
 
           case 5: 
-            tasks.push({id: uuid(), content: "Create object", hint: "Object name"});
-            tasks.push({id: uuid(), content: "Instantiate object", hint: "Object name"});
+            tasks.push({id: uuid(), content: "Create object"});
+            tasks.push({id: uuid(), content: "Instantiate object"});
           break;
 
           case 6: 
@@ -64,38 +64,6 @@ class App extends React.Component {
           }
         })
       }
-
-      changeHint = (id) => {
-        // Get an instance of the tasks array 
-        var tasks = this.state.unordered.items;
-
-        // Store text in input field
-        var input = document.getElementById(id).value;
-
-        // Change task hint
-        var tempTask = tasks.find(task => task.content = id);
-        tempTask.hint = input; 
-
-        // Loop through array and mutate
-        tasks.map((item) => {
-          if(item.content = id){
-            item = tempTask;
-          }
-        })
-
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-
-
-
-        
-
-        alert(tempTask.hint)
-      }
-
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -154,6 +122,10 @@ class App extends React.Component {
 
     }
   render(){
+    
+
+    
+
     const concepts = [
       {task: 'If', index: 1}, 
       {task: 'Else', index: 2},
@@ -229,10 +201,7 @@ class App extends React.Component {
                                               ...provided.draggableProps.style
                                             }}
                                           >
-                                            <div className="btn-content">
-                                              {item.content}
-                                              <input id={item.content} onBlur={() => this.changeHint(item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
-                                            </div> 
+                                             <input type="text" className="user-input" name="uinput" placeholder={item.content}/>
                                           </div>
                                         );
                                       }}
@@ -256,7 +225,7 @@ class App extends React.Component {
                   <h3> Copy comments below </h3>
                   {this.state.unordered.items.map((item, index) => {
                     return(
-                      <p> // {item.content} {item.hint}</p>
+                      <p> // {item.content}</p>
                     );
                   })}
                 </div>

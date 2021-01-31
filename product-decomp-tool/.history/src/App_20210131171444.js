@@ -66,34 +66,9 @@ class App extends React.Component {
       }
 
       changeHint = (id) => {
-        // Get an instance of the tasks array 
-        var tasks = this.state.unordered.items;
-
-        // Store text in input field
         var input = document.getElementById(id).value;
-
-        // Change task hint
-        var tempTask = tasks.find(task => task.content = id);
-        tempTask.hint = input; 
-
-        // Loop through array and mutate
-        tasks.map((item) => {
-          if(item.content = id){
-            item = tempTask;
-          }
-        })
-
-        this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-
-
-
+        // Find the element in the array and mutate it 
         
-
-        alert(tempTask.hint)
       }
 
      onDragEnd = (result, columns)  => {
