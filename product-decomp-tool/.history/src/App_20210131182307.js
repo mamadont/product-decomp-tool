@@ -67,7 +67,11 @@ class App extends React.Component {
           }
         })
       }
-      
+
+      changeHint = (id) => {
+       
+      }
+
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;

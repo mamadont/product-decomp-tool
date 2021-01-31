@@ -67,7 +67,11 @@ class App extends React.Component {
           }
         })
       }
-      
+
+      changeHint = (id) => {
+       
+      }
+
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -204,7 +208,7 @@ class App extends React.Component {
                                           >
                                             <div className="btn-content">
                                               {item.content}
-                                              <input type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                              <input id={item.content} onBlur={() => this.changeHint(item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                             </div> 
                                           </div>
                                         );

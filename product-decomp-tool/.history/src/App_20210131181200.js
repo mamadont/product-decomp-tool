@@ -51,11 +51,8 @@ class App extends React.Component {
           break;
 
           case 7: 
-            tasks.push({id: uuid(), content: "Create variable"});
+            tasks.push({id: uuid(), content: "Create class"});
           break;
-
-          case 8: 
-            tasks.push({id: uuid(), content: " "});
   
           default:
             console.log("Invalid index");
@@ -67,7 +64,32 @@ class App extends React.Component {
           }
         })
       }
-      
+
+      changeHint = (id) => {
+        // // Get an instance of the tasks array 
+        // var tasks = this.state.unordered.items;
+
+        // // Store text in input field
+        // var input = document.getElementById(id).value;
+
+        // // Change task hint
+        // var tempTask = tasks.find(task => task.content = id);
+        // tempTask.hint = input; 
+
+        // // Loop through array and mutate
+        // tasks.map((item) => {
+        //   if(item.content = id){
+        //     item = tempTask;
+        //   }
+        // })
+
+        // this.setState({
+        //   unordered: {
+        //     items: tasks
+        //   }
+        // })
+      }
+
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -134,8 +156,7 @@ class App extends React.Component {
       {task: 'Create Method', index: 6},
       {task: 'Create Object', index: 7},
       {task: 'Create Array', index: 8},
-      {task: 'Create Variable', index: 9},
-      {task: 'Blank Card', index: 9},
+      {task: 'Create Class', index: 9},
     ];
 
     var columns = this.state;
@@ -204,7 +225,7 @@ class App extends React.Component {
                                           >
                                             <div className="btn-content">
                                               {item.content}
-                                              <input type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                              <input id={item.content} onBlur={() => this.changeHint(item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                             </div> 
                                           </div>
                                         );

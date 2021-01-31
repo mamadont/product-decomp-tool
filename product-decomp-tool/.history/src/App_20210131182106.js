@@ -67,7 +67,11 @@ class App extends React.Component {
           }
         })
       }
-      
+
+      changeHint = (id) => {
+       
+      }
+
      onDragEnd = (result, columns)  => {
   
       if (!result.destination) return;
@@ -135,7 +139,6 @@ class App extends React.Component {
       {task: 'Create Object', index: 7},
       {task: 'Create Array', index: 8},
       {task: 'Create Variable', index: 9},
-      {task: 'Blank Card', index: 9},
     ];
 
     var columns = this.state;
@@ -204,7 +207,7 @@ class App extends React.Component {
                                           >
                                             <div className="btn-content">
                                               {item.content}
-                                              <input type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                              <input id={item.content} onBlur={() => this.changeHint(item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                             </div> 
                                           </div>
                                         );
