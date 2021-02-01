@@ -5,17 +5,13 @@ import './components/page-1.css';
 import uuid from "uuid/v4";
 
 const tasks = [];
-const hints = [];
-
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       'unordered': {
-        comments: hints,
         name: "Unordered Steps",
-        items: tasks,
-        
+        items: tasks
       },
     };
   }
@@ -119,18 +115,6 @@ class App extends React.Component {
         })
       }  
     }
-    
-
-    changeHint = (id, content) => {
-      var hint = document.getElementById(id).value;
-      hints.push(content + " " + hint);
-      this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-      console.log(this.hints)
-    }
    
 
     printC = () => {
@@ -163,7 +147,7 @@ class App extends React.Component {
       
       <div className="app">
         <h1> Welcome to the COSC 236 Product Decomposition Tool !</h1>
-        
+        <h2 className="headers">Unordered Steps</h2>
         <div>
           {concepts.map((item, index) => {
           return(
@@ -171,7 +155,7 @@ class App extends React.Component {
             );
            })}
         </div>
-        <h2 className="headers">Unordered Steps</h2>
+        
           <div className="card-container">
             <div className="page-app">
             <div className="drag-context">
@@ -223,7 +207,7 @@ class App extends React.Component {
                                           >
                                             <div className="btn-content">
                                               {item.content}
-                                              <input id={item.id} onBlur={() => this.changeHint(item.id, item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                              <input type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                             </div> 
                                           </div>
                                         );
@@ -244,11 +228,11 @@ class App extends React.Component {
                 
               <div id="modal">
                 <div className="modal-content">
-                  <span id="close-btn" className="close">&times;</span>
+                  <span id="close-btn" class="close">&times;</span>
                   <h3> Copy comments below </h3>
-                  {hints.map((item) => {
+                  {this.state.unordered.items.map((item, index) => {
                     return(
-                      <p> // {item} </p>
+                      <p> // {item.content} </p>
                     );
                   })}
                 </div>

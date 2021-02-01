@@ -12,10 +12,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       'unordered': {
-        comments: hints,
         name: "Unordered Steps",
         items: tasks,
-        
+        comments: hints,
       },
     };
   }
@@ -125,10 +124,10 @@ class App extends React.Component {
       var hint = document.getElementById(id).value;
       hints.push(content + " " + hint);
       this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
+        unordered: {
+          comments: tasks
+        }
+      })
       console.log(this.hints)
     }
    

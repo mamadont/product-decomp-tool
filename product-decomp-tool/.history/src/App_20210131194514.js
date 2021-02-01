@@ -5,17 +5,15 @@ import './components/page-1.css';
 import uuid from "uuid/v4";
 
 const tasks = [];
-const hints = [];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       'unordered': {
-        comments: hints,
         name: "Unordered Steps",
         items: tasks,
-        
+        comments: comments,
       },
     };
   }
@@ -120,16 +118,10 @@ class App extends React.Component {
       }  
     }
     
-
+    hints = [];
     changeHint = (id, content) => {
       var hint = document.getElementById(id).value;
       hints.push(content + " " + hint);
-      this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
-      console.log(this.hints)
     }
    
 
@@ -246,7 +238,7 @@ class App extends React.Component {
                 <div className="modal-content">
                   <span id="close-btn" className="close">&times;</span>
                   <h3> Copy comments below </h3>
-                  {hints.map((item) => {
+                  {comments.map((item) => {
                     return(
                       <p> // {item} </p>
                     );

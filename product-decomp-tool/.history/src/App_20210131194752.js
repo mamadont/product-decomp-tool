@@ -12,10 +12,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       'unordered': {
-        comments: hints,
         name: "Unordered Steps",
         items: tasks,
-        
       },
     };
   }
@@ -124,11 +122,6 @@ class App extends React.Component {
     changeHint = (id, content) => {
       var hint = document.getElementById(id).value;
       hints.push(content + " " + hint);
-      this.setState({
-          unordered: {
-            items: tasks
-          }
-        })
       console.log(this.hints)
     }
    
