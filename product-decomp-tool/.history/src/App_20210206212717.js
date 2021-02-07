@@ -17,19 +17,6 @@ class App extends React.Component {
     };
   }
 
-    changeHint = (id) => {
-      var hint = document.getElementById(id).value;
-      // loop through the tasks array use the uuid to find the unique card
-      tasks.forEach((element) => {
-        if (element.id === id){
-          // change the hint property to the test in the input value
-          element.hint = hint;
-        }
-      })
-
-      
-    }
-
     // Generates card based on index
     add = (index) => { 
         switch(index){
@@ -80,7 +67,7 @@ class App extends React.Component {
           unordered: {
             items: tasks
           }
-        });
+        })
       }
 
      onDragEnd = (result, columns)  => {
@@ -131,29 +118,24 @@ class App extends React.Component {
     }
     
 
-   
+    changeHint = (id, content) => {
+      var hint = document.getElementById(id).value;
+      hints.push(content + " " + hint);
+      this.setState({
+          unordered: {
+            items: tasks
+          }
+        })
+   }
    
 
     printC = () => {
-      // grab elements
       var modal = document.getElementById("modal");
       var close = document.getElementById("close-btn");
       modal.style.display = "block";
 
-      // load comments
-      this.state.unordered.items.forEach((task) => {
-        var tag = document.createElement("p");
-        var text = document.createTextNode("// " + task.content + " " + task.hint);
-        tag.appendChild(text);
-        var element = document.getElementById("comments");
-        element.appendChild(tag);
-      });
-
       close.onclick = () =>{
         modal.style.display = "none";
-        var x = document.getElementById('comments');
-        x.innerHTML = "";
-
       }
 
     }
@@ -243,7 +225,7 @@ class App extends React.Component {
                                                 >
                                                   <div className="btn-content">
                                                     {item.content}
-                                                    <input id={item.id} onBlur={() => this.changeHint(item.id)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                                    <input id={item.id} onBlur={() => this.changeHint(item.id, item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
                                                   </div> 
                                                 </div>
                                               );
@@ -266,13 +248,11 @@ class App extends React.Component {
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
                         <h3> Copy comments below </h3>
-                        {/* {this.state.unordered.items.map((item) => {
+                        {this.state.unordered.items.map((item) => {
                           return(
-                            // eslint-disable-next-line
                             <p> // {item.content} {item.hint} </p>
                           );
-                        })} */}
-                        <div id="comments"></div>
+                        })}
                       </div>
                     </div>
                   </div>

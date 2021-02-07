@@ -151,9 +151,6 @@ class App extends React.Component {
 
       close.onclick = () =>{
         modal.style.display = "none";
-        var x = document.getElementById('comments');
-        x.innerHTML = "";
-
       }
 
     }

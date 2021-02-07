@@ -10,12 +10,13 @@
 
 .button {
   margin-left: 5px;
-  background-color: #00635D;
+  background-color: 00635D;
   color: white;
   font-size: 15px;
   border-color: white;
   height: 50px;
   width: 75px;
+
 }
 
 .user-input {

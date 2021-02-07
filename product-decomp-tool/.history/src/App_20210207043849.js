@@ -140,20 +140,19 @@ class App extends React.Component {
       var close = document.getElementById("close-btn");
       modal.style.display = "block";
 
+      var allTasks = this.state.unordered.items;
+
       // load comments
-      this.state.unordered.items.forEach((task) => {
-        var tag = document.createElement("p");
-        var text = document.createTextNode("// " + task.content + " " + task.hint);
-        tag.appendChild(text);
+      this.state.unordered.items.forEach((task, idx) => {
         var element = document.getElementById("comments");
-        element.appendChild(tag);
+        if (task.id !== allTasks[idx].id){
+          element.innerHTML += task.content + " " + task.hint ;
+        }
+        
       });
 
       close.onclick = () =>{
         modal.style.display = "none";
-        var x = document.getElementById('comments');
-        x.innerHTML = "";
-
       }
 
     }

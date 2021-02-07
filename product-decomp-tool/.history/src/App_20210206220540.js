@@ -135,25 +135,12 @@ class App extends React.Component {
    
 
     printC = () => {
-      // grab elements
       var modal = document.getElementById("modal");
       var close = document.getElementById("close-btn");
       modal.style.display = "block";
 
-      // load comments
-      this.state.unordered.items.forEach((task) => {
-        var tag = document.createElement("p");
-        var text = document.createTextNode("// " + task.content + " " + task.hint);
-        tag.appendChild(text);
-        var element = document.getElementById("comments");
-        element.appendChild(tag);
-      });
-
       close.onclick = () =>{
         modal.style.display = "none";
-        var x = document.getElementById('comments');
-        x.innerHTML = "";
-
       }
 
     }
@@ -266,13 +253,12 @@ class App extends React.Component {
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
                         <h3> Copy comments below </h3>
-                        {/* {this.state.unordered.items.map((item) => {
+                        {this.state.unordered.items.map((item) => {
                           return(
                             // eslint-disable-next-line
                             <p> // {item.content} {item.hint} </p>
                           );
-                        })} */}
-                        <div id="comments"></div>
+                        })}
                       </div>
                     </div>
                   </div>
