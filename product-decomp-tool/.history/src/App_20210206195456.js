@@ -165,6 +165,7 @@ class App extends React.Component {
 
            {/* main menu buttons and welcome message */}
             <div className="concept-btns">
+              
               {concepts.map((item, index) => {
               return(
                 <button className="button" onClick={() => this.add(index)}>{item.task}</button>
@@ -251,9 +252,9 @@ class App extends React.Component {
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
                         <h3> Copy comments below </h3>
-                        {this.state.unordered.items.map((item) => {
+                        {hints.map((item) => {
                           return(
-                            <p> // {item.content} </p>
+                            <p> // {item} </p>
                           );
                         })}
                       </div>

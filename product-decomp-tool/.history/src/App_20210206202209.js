@@ -253,7 +253,7 @@ class App extends React.Component {
                         <h3> Copy comments below </h3>
                         {this.state.unordered.items.map((item) => {
                           return(
-                            <p> // {item.content} </p>
+                            <p> // {item.task} </p>
                           );
                         })}
                       </div>

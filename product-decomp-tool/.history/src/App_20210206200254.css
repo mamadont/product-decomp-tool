@@ -14,7 +14,7 @@
   color: white;
   font-size: 15px;
   border-color: white;
-  height: 50px;
+  height: 75px;
   width: 75px;
 
 }
@@ -56,8 +56,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 15%;
-  position: sticky;
+  margin-right: 15%
 }
 
 

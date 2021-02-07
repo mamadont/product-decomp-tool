@@ -159,113 +159,104 @@ class App extends React.Component {
 
 
     return (
+      
       <div className="app">
         <h1> Welcome to the COSC 236 Product Decomposition Tool !</h1>
-        <div className="main-container">
-
-           {/* main menu buttons and welcome message */}
-            <div className="concept-btns">
-              {concepts.map((item, index) => {
-              return(
-                <button className="button" onClick={() => this.add(index)}>{item.task}</button>
-                );
-              })}
-            </div>
-              
-            {/* card container, the cards, the button, and the header */}
-            <div className="main">
-              {/* header */}
-              <h2 className="headers">Unordered Steps</h2>
-              {/* card container */}
-              <div className="card-container">
-                <div className="page-app">
-                  <div className="drag-context">
-                    <DragDropContext
-                      onDragEnd={(result) => this.onDragEnd(result, columns)}
+        
+        <div>
+          gg
+          {concepts.map((item, index) => {
+          return(
+            <button className="button" onClick={() => this.add(index)}>{item.task}</button>
+            );
+           })}
+        </div>
+        <h2 className="headers">Unordered Steps</h2>
+          <div className="card-container">
+            <div className="page-app">
+            <div className="drag-context">
+              <DragDropContext
+                onDragEnd={(result) => this.onDragEnd(result, columns)}
+              >
+                {Object.entries(columns).map(([columnId, column], index) => {
+                  return (
+                    <div
+                      className="column-container"
+                      key={columnId}
                     >
-                      {Object.entries(columns).map(([columnId, column], index) => {
-                        return (
-                          <div
-                            className="column-container"
-                            key={columnId}
-                          >
-                            
-                            <div style={{ margin: 8 }}>
-                              <Droppable droppableId={columnId} key={columnId}>
-                                {(provided, snapshot) => {
-                                  return (
-                                    <div
-                                      {...provided.droppableProps}
-                                      ref={provided.innerRef}
-                                      className="column"
-                                      style={{
-                                        background: snapshot.isDraggingOver
-                                          ? "#343d52"
-                                          : "#01172F",
-                                      }}
-                                    >
-                                      {column.items.map((item, index) => {
-                                        return (
-                                          <Draggable
-                                            key={item.id}
-                                            draggableId={item.id}
-                                            index={index}
-                                          >
-                                            {(provided, snapshot) => {
-                                              return (
-                                                <div
-                                                className="task-card"
-                                                  ref={provided.innerRef}
-                                                  {...provided.draggableProps}
-                                                  {...provided.dragHandleProps}
-                                                  style={{
-                                                    backgroundColor: snapshot.isDragging
-                                                      ? "#858b97"
-                                                      : "#00635D",
-                                                    color: "#b2d8d8",
-                                                    ...provided.draggableProps.style
-                                                  }}
-                                                >
-                                                  <div className="btn-content">
-                                                    {item.content}
-                                                    <input id={item.id} onBlur={() => this.changeHint(item.id, item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
-                                                  </div> 
-                                                </div>
-                                              );
-                                            }}
-                                          </Draggable>
-                                        );
-                                      })}
-                                      {provided.placeholder}
-                                    </div>
-                                  );
-                                }}
-                              </Droppable>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </DragDropContext>
                       
-                    <div id="modal">
-                      <div className="modal-content">
-                        <span id="close-btn" className="close">&times;</span>
-                        <h3> Copy comments below </h3>
-                        {this.state.unordered.items.map((item) => {
-                          return(
-                            <p> // {item.content} </p>
-                          );
-                        })}
+                      <div style={{ margin: 8 }}>
+                        <Droppable droppableId={columnId} key={columnId}>
+                          {(provided, snapshot) => {
+                            return (
+                              <div
+                                {...provided.droppableProps}
+                                ref={provided.innerRef}
+                                className="column"
+                                style={{
+                                  background: snapshot.isDraggingOver
+                                    ? "#343d52"
+                                    : "#01172F",
+                                }}
+                              >
+                                {column.items.map((item, index) => {
+                                  return (
+                                    <Draggable
+                                      key={item.id}
+                                      draggableId={item.id}
+                                      index={index}
+                                    >
+                                      {(provided, snapshot) => {
+                                        return (
+                                          <div
+                                          className="task-card"
+                                            ref={provided.innerRef}
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            style={{
+                                              backgroundColor: snapshot.isDragging
+                                                ? "#858b97"
+                                                : "#00635D",
+                                              color: "#b2d8d8",
+                                              ...provided.draggableProps.style
+                                            }}
+                                          >
+                                            <div className="btn-content">
+                                              {item.content}
+                                              <input id={item.id} onBlur={() => this.changeHint(item.id, item.content)} type="text" className="user-input" name="uinput" placeholder={item.hint}/>
+                                            </div> 
+                                          </div>
+                                        );
+                                      }}
+                                    </Draggable>
+                                  );
+                                })}
+                                {provided.placeholder}
+                              </div>
+                            );
+                          }}
+                        </Droppable>
                       </div>
                     </div>
-                  </div>
+                  );
+                })}
+              </DragDropContext>
+                
+              <div id="modal">
+                <div className="modal-content">
+                  <span id="close-btn" className="close">&times;</span>
+                  <h3> Copy comments below </h3>
+                  {hints.map((item) => {
+                    return(
+                      <p> // {item} </p>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
             <button id="btn" onClick={this.printC}>Print comments</button>
           </div>
-          </div> 
-        </div>
-        </div>
-        
-                  
+          </div>           
       </div>
       
     );

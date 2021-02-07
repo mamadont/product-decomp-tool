@@ -161,9 +161,9 @@ class App extends React.Component {
     return (
       <div className="app">
         <h1> Welcome to the COSC 236 Product Decomposition Tool !</h1>
-        <div className="main-container">
 
-           {/* main menu buttons and welcome message */}
+        
+        <div className="main-containter">
             <div className="concept-btns">
               {concepts.map((item, index) => {
               return(
@@ -171,12 +171,8 @@ class App extends React.Component {
                 );
               })}
             </div>
-              
-            {/* card container, the cards, the button, and the header */}
-            <div className="main">
-              {/* header */}
+            <div classname="main">
               <h2 className="headers">Unordered Steps</h2>
-              {/* card container */}
               <div className="card-container">
                 <div className="page-app">
                   <div className="drag-context">
@@ -251,9 +247,9 @@ class App extends React.Component {
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
                         <h3> Copy comments below </h3>
-                        {this.state.unordered.items.map((item) => {
+                        {hints.map((item) => {
                           return(
-                            <p> // {item.content} </p>
+                            <p> // {item} </p>
                           );
                         })}
                       </div>
