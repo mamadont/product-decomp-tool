@@ -16,11 +16,6 @@ class App extends React.Component {
       },
     };
   }
-
-    componentDidMount(){
-      console.log("Hello world");
-    }
-
     createCookie = (name) => {
       document.cookie = "name= " + name + "course = cosc236";
     }
