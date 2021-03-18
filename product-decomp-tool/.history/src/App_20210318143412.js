@@ -17,23 +17,22 @@ class App extends React.Component {
     };
   }
 
-   componentDidMount(){
-    var modal = document.getElementById("info-modal");
-    var arr = document.cookie.split(" ");
-    if (arr.length > 2){
-      modal.style.display = "none";
+    componentDidMount(){
+      var modal = document.getElementById("info-modal");
+      modal.style.display = "block";
     }
-   }
 
     handleSubmit = () => {
       // Initialize variables
+      var modal = document.getElementById("info-modal");
       var name = document.getElementById("username").value;
       var section = document.getElementById("section").value;
+      modal.style.display = "none";
 
-      // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
+      document.cookie = "name= " + name + "course = cosc236" + section;
 
-      
+      console.log("Hello world");
+      console.log(document.cookie);
     }
 
     changeHint = (id) => {
@@ -186,9 +185,6 @@ class App extends React.Component {
     ];
 
     var columns = this.state;
-    var student = document.cookie.replace("name=", " ").replace("course =", " ").split(" ");
-    var studentName = student[1];
-    var courseSection = student[3];
 
 
     return (
@@ -284,8 +280,6 @@ class App extends React.Component {
                     <div id="modal">
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
-                        <h3>// {studentName}</h3>
-                        <h3>// {courseSection}</h3>
                         <h3> Copy comments below </h3>
                         <div id="comments"></div>
                       </div>
@@ -294,14 +288,12 @@ class App extends React.Component {
                     {/* User info modal */}
                       <div id="info-modal">
                         <div className="modal-content">
-                          <form id="info-form" onSubmit={this.handleSubmit}>
+                          <form onSubmit={this.handleSubmit}>
                               <label>Name: </label>
-                              <input id="username" placeholder="name" type="text" required></input>
+                              <input id="username" placeholder="name" type="text"></input>
 
                               <label>Class section: </label>
-                              <input id="section" placeholder="section" type="text" required></input>
-
-                              <div>{student}</div>
+                              <input id="section" placeholder="section" type="text"></input>
 
                               <button type="submit"> Submit</button>
                           </form>

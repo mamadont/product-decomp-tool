@@ -31,7 +31,7 @@ class App extends React.Component {
       var section = document.getElementById("section").value;
 
       // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
+      document.cookie = "name= " + name + "course = cosc236" + section;
 
       
     }

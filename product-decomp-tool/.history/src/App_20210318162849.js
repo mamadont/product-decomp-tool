@@ -19,21 +19,22 @@ class App extends React.Component {
 
    componentDidMount(){
     var modal = document.getElementById("info-modal");
-    var arr = document.cookie.split(" ");
-    if (arr.length > 2){
-      modal.style.display = "none";
-    }
+    // if (document.cookie != null){
+    //   modal.style.display = "none";
+    // }
    }
 
     handleSubmit = () => {
+      
       // Initialize variables
+      var modal = document.getElementById("info-modal");
       var name = document.getElementById("username").value;
       var section = document.getElementById("section").value;
+      
 
       // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
-
-      
+      document.cookie = "name= " + name + "course = cosc236" + section;
+      modal.style.display = "none";
     }
 
     changeHint = (id) => {
@@ -296,12 +297,10 @@ class App extends React.Component {
                         <div className="modal-content">
                           <form id="info-form" onSubmit={this.handleSubmit}>
                               <label>Name: </label>
-                              <input id="username" placeholder="name" type="text" required></input>
+                              <input id="username" placeholder="name" type="text"></input>
 
                               <label>Class section: </label>
-                              <input id="section" placeholder="section" type="text" required></input>
-
-                              <div>{student}</div>
+                              <input id="section" placeholder="section" type="text"></input>
 
                               <button type="submit"> Submit</button>
                           </form>

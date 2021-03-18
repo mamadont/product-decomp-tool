@@ -19,21 +19,22 @@ class App extends React.Component {
 
    componentDidMount(){
     var modal = document.getElementById("info-modal");
-    var arr = document.cookie.split(" ");
-    if (arr.length > 2){
-      modal.style.display = "none";
-    }
+    // if (document.cookie != null){
+    //   modal.style.display = "none";
+    // }
    }
 
     handleSubmit = () => {
+      
       // Initialize variables
+      var modal = document.getElementById("info-modal");
       var name = document.getElementById("username").value;
       var section = document.getElementById("section").value;
+      
 
       // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
-
-      
+      document.cookie = "name= " + name + "course = cosc236" + section;
+      modal.style.display = "none";
     }
 
     changeHint = (id) => {
@@ -284,7 +285,9 @@ class App extends React.Component {
                     <div id="modal">
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
+                        {/* // eslint-disable-next-line  */}
                         <h3>// {studentName}</h3>
+                        {/* // eslint-disable-next-line  */}
                         <h3>// {courseSection}</h3>
                         <h3> Copy comments below </h3>
                         <div id="comments"></div>
@@ -300,8 +303,6 @@ class App extends React.Component {
 
                               <label>Class section: </label>
                               <input id="section" placeholder="section" type="text" required></input>
-
-                              <div>{student}</div>
 
                               <button type="submit"> Submit</button>
                           </form>

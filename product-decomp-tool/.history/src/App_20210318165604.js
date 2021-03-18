@@ -20,8 +20,8 @@ class App extends React.Component {
    componentDidMount(){
     var modal = document.getElementById("info-modal");
     var arr = document.cookie.split(" ");
-    if (arr.length > 2){
-      modal.style.display = "none";
+    if (document.cookie != null){
+      modal.style.display = "block";
     }
    }
 
@@ -31,9 +31,7 @@ class App extends React.Component {
       var section = document.getElementById("section").value;
 
       // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
-
-      
+      document.cookie = "name= " + name + "course = cosc236" + section;
     }
 
     changeHint = (id) => {
@@ -300,8 +298,6 @@ class App extends React.Component {
 
                               <label>Class section: </label>
                               <input id="section" placeholder="section" type="text" required></input>
-
-                              <div>{student}</div>
 
                               <button type="submit"> Submit</button>
                           </form>

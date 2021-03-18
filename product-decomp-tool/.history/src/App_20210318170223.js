@@ -31,7 +31,7 @@ class App extends React.Component {
       var section = document.getElementById("section").value;
 
       // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
+      document.cookie = "name= " + name + "course = cosc236" + section;
 
       
     }
@@ -188,7 +188,7 @@ class App extends React.Component {
     var columns = this.state;
     var student = document.cookie.replace("name=", " ").replace("course =", " ").split(" ");
     var studentName = student[1];
-    var courseSection = student[3];
+    var courseSection = student[2];
 
 
     return (
@@ -301,7 +301,7 @@ class App extends React.Component {
                               <label>Class section: </label>
                               <input id="section" placeholder="section" type="text" required></input>
 
-                              <div>{student}</div>
+                              <div>{document.cookie}</div>
 
                               <button type="submit"> Submit</button>
                           </form>

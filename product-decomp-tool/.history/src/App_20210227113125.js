@@ -3,6 +3,7 @@ import './App.css';
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import './components/page-1.css';
 import uuid from "uuid/v4";
+import UserInfo from "./components/user-info";
 
 const tasks = [];
 class App extends React.Component {
@@ -17,23 +18,16 @@ class App extends React.Component {
     };
   }
 
-   componentDidMount(){
-    var modal = document.getElementById("info-modal");
-    var arr = document.cookie.split(" ");
-    if (arr.length > 2){
-      modal.style.display = "none";
+    componentDidMount(){
+      var close = document.getElementById("close-btn");
+      var modal = document.getElementById("info-modal");
+      modal.style.display = "block";
+
+     
     }
-   }
 
-    handleSubmit = () => {
-      // Initialize variables
-      var name = document.getElementById("username").value;
-      var section = document.getElementById("section").value;
-
-      // store data in a cookie 
-      document.cookie = "name= " + name + " course = cosc236" + section;
-
-      
+    close = () =>{
+      modal.style.display = "none";
     }
 
     changeHint = (id) => {
@@ -186,9 +180,6 @@ class App extends React.Component {
     ];
 
     var columns = this.state;
-    var student = document.cookie.replace("name=", " ").replace("course =", " ").split(" ");
-    var studentName = student[1];
-    var courseSection = student[3];
 
 
     return (
@@ -284,8 +275,6 @@ class App extends React.Component {
                     <div id="modal">
                       <div className="modal-content">
                         <span id="close-btn" className="close">&times;</span>
-                        <h3>// {studentName}</h3>
-                        <h3>// {courseSection}</h3>
                         <h3> Copy comments below </h3>
                         <div id="comments"></div>
                       </div>
@@ -294,16 +283,11 @@ class App extends React.Component {
                     {/* User info modal */}
                       <div id="info-modal">
                         <div className="modal-content">
-                          <form id="info-form" onSubmit={this.handleSubmit}>
+                          <span id="close-btn" onClick={this.close } className="close">&times;</span>
+                          <form>
                               <label>Name: </label>
-                              <input id="username" placeholder="name" type="text" required></input>
-
-                              <label>Class section: </label>
-                              <input id="section" placeholder="section" type="text" required></input>
-
-                              <div>{student}</div>
-
-                              <button type="submit"> Submit</button>
+                              <input placeholder="name" type="text"></input>
+                              <button> Submit</button>
                           </form>
                         </div>
                      </div>
